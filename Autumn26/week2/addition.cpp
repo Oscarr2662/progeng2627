@@ -1,19 +1,20 @@
 #include <iostream>
 
 int main(){
-    double n1, n2, sum;
-    std::cout << "please enter the first number" << std::endl;
-    std::cin >> n1;
-    std::cout << "please enter the second number" << std::endl;
-    std::cin >> n2;
-    sum=n1*n2;
-    std::cout << n1 << "*" << n2 << "=" << sum << std::endl;
+     double length, height, perimeter, area;
 
+     std::cout << "please enter the length of the rectangle" << std::endl;
+     std::cin >> length;
 
+     std::cout << "please enter the height of the rectangle"<< std::endl;
+     std::cin >> height;
 
+     perimeter = (2 * height) + (2 * length);
+    
+     area = length * height;
 
-
-
+     std::cout << "the perimeter is" << "=" << perimeter << std::endl;
+     std::cout << "the area is" << "=" << area << std::endl;
 
 
 }
