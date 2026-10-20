@@ -1,33 +1,33 @@
-// first version, not the most efficient one
 #include <iostream>
+#include <string>
 
 int main(){
-    int n;
-    bool found_factor = false;
-    // initially we haven't found any factors...
+    int lower, upper;
 
-    std::cout << "please enter an integer greater than 1" << std::endl;
-    // we assume that the user enters an integer greater than 1
-    std::cin >> n;
+    std::cout << "Enter the lower and upper bounds: ";
+    std::cin >> lower >> upper;
 
+    bool found = false;
 
-    // cf like candidate factor
-    // (begins at 2, smallest candidate factor)
+    while( lower <= upper && found == false){
+        int guess = lower + (upper - lower)/2;
+        std::string answer;
 
-    for(int cf = 2; cf < n; cf++){
+        std::cout << "Is your number " << guess << std::endl;
+        std::cout << "Enter higher, lower, or correct: ";
+        std::cin >> answer;
 
-        if( (n % cf) == 0){ // n can be divided by cf...
-
-            found_factor = true;
-            //...it means we have found a factor!
+        if (answer == "higher"){
+            lower = guess + 1;
+        }else if( answer == "lower"){
+            upper = guess - 1;
+        }else if(answer == "correct"){
+            found = true;
+            std::cout << "Your number is" <<" " << guess << " !" << std::endl;
         }
+}
 
-    }
-
-    if(found_factor){
-        std::cout << "the number is not prime" << std::endl;
-    }
-    else{
-        std::cout << "the number is prime" << std::endl;
+    if(found == false){
+    std::cout << "The answers do not fit the given range." << std::endl;
     }
 }
