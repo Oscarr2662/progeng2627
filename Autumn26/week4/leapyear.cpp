@@ -29,6 +29,9 @@ bool leap_year(int year){
     return ly;
    
     }
+    //The names do not need to match. When the function finishes, 
+    //its local variable ly goes away, 
+    //but the returned true has been passed to the calling line.
 
 int main(){
 
@@ -47,4 +50,7 @@ int main(){
     else{
         std::cout << "it's not a leap year" << std::endl;
     }
+    
+    std::cout << (leap_year(1600) == true) << std::endl;
+    std::cout << (leap_year(1700) == false) << std::endl;
 }
